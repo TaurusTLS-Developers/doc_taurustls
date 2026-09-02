@@ -49,7 +49,7 @@
     "targets": {
       "html": {
         "type": "html",
-        "path": "//?/C:/msys64/home/jpmugaas/TaurusTLS/Help/html",
+        "path": "../TaurusTLS/Help/html",
         "content": [
           "docs",
           "api"
@@ -57,7 +57,7 @@
       },
       "chm": {
         "type": "chm",
-        "path": "//?/C:/msys64/home/jpmugaas/TaurusTLS/Help/chm/TaurusForIndy290All.chm",
+        "path": "../TaurusTLS/Help/chm/TaurusForIndy290All.chm",
         "content": [
           "docs",
           "api"
