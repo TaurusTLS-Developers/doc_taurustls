@@ -1,0 +1,68 @@
+{
+  "edition": "2026",
+  "project": {
+    "name": "taurustls",
+    "title": "TaurusTLS",
+    "description": "OpenSSL 3.x support for Indy - Internet Direct",
+    "copyright": "Copyright (c) 2026 TaurusTLS Developers,  All Rights Reserved"
+  },
+  "sources": {
+    "main": {
+      "type": "delphi",
+      "files": [
+        "TaurusTLS_RTForIndy290.dproj"
+      ],
+      "options": {
+        "compiler": "delphi_12",
+        "platform": "Win32"
+      }
+    }
+  },
+  "content": {
+    "docs": {
+      "title": "Guide",
+      "type": "markdown",
+      "root": "docs",
+      "mount": "/"
+    },
+    "api": {
+      "title": "API Reference",
+      "type": "delphi",
+      "source": "main",
+      "filter": {
+        "visibility": {
+          "protected": false
+        }
+      }
+    }
+  },
+  "site": {
+    "footer": {
+      "notice": "TaurusTLS Copyright (c) 2026 TaurusTLS Developers, All Rights Reserved Built with {{sys.docinsight}}"
+    }
+  },
+  "output": {
+    "default_targets": [
+      "html",
+      "chm"
+    ],
+    "targets": {
+      "html": {
+        "type": "html",
+        "path": "//?/C:/msys64/home/jpmugaas/TaurusTLS/Help/html",
+        "content": [
+          "docs",
+          "api"
+        ]
+      },
+      "chm": {
+        "type": "chm",
+        "path": "//?/C:/msys64/home/jpmugaas/TaurusTLS/Help/chm/TaurusForIndy290All.chm",
+        "content": [
+          "docs",
+          "api"
+        ]
+      }
+    }
+  }
+}
