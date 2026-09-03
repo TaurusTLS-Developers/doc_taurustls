@@ -5,6 +5,8 @@
     "title": "TaurusTLS",
     "description": "OpenSSL 3.x support for Indy - Internet Direct",
     "copyright": "Copyright (c) 2026 TaurusTLS Developers,  All Rights Reserved"
+    "homepage": "https://taurustls.org/",
+    "repository": "https://github.com/TaurusTLS-Developers/TaurusTLS"
   },
   "sources": {
     "main": {
@@ -38,7 +40,7 @@
   },
   "site": {
     "footer": {
-      "notice": "TaurusTLS Copyright (c) 2026 TaurusTLS Developers, All Rights Reserved Built with {{sys.docinsight}}"
+      "notice": "TaurusTLS Copyright (c) 2026 TaurusTLS Developers, All Rights Reserved. Built with {{sys.docinsight}}"
     }
   },
   "output": {

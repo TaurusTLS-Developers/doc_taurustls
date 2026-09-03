@@ -21,3 +21,5 @@ TaurusTLS supports the following operating systems:
 - MacOS
 
 - Windows
+
+Visit the [TaurusTLS website](https://taurustls.org) for the latest developments or [examine the repository](https://github.com/TaurusTLS-Developers/TaurusTLS) for the latest code and [releases](https://github.com/TaurusTLS-Developers/TaurusTLS/releases).
