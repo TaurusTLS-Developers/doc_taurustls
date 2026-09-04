@@ -12,7 +12,7 @@
     "main": {
       "type": "delphi",
       "files": [
-        "TaurusTLS_RTForIndy290.dproj"
+        "../TaurusTLS/Packages/d12/TaurusTLS_RTForIndy290.dproj"
       ],
       "options": {
         "compiler": "delphi_12",
