@@ -4,9 +4,9 @@ TaurusTLS provides 3.x and 4.x support for Indy - Internet Direct. It includes h
 
 | Component                 | Description                                                                                       |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
-| TaurusTLSIOHandlerSocket  | Enables TLS in a TIdTCPClientCustom descendant.                                                   |
-| TTaurusTLSServerIOHandler | Enables TLS in a TIdCustomTCPServer descendant.                                                   |
-| TTaurusTLSUnicodeLog      | Triggers events when data is sent and received and data is provided in Unicode form if supported. |
+| [[/taurustls/TaurusTLS/TTaurusTLSIOHandlerSocket]] | Enables TLS in a TIdTCPClientCustom descendant.                                                  |
+| [[/taurustls/TaurusTLS/TTaurusTLSServerIOHandler]] | Enables TLS in a TIdCustomTCPServer descendant.                                                   |
+| [[/taurustls/TaurusTLS_Unicode_Log/TTaurusTLSUnicodeLog]] | Triggers events when data is sent and received and data is provided in Unicode form if supported. |
 
 The components are in the `TaurusTLS.pas` unit and the components are available on the IDE palette page, “`TaurusTLS`”.
 
