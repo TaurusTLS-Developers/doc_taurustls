@@ -6,4 +6,4 @@ default_topic: ./overview.md
 
 - [Overview](./overview.md)
 - [Deploying Your TaurusTLS Applications](./deployapps.md)
-- [ontributing to TaurusTLS](./contributing.md)
+- [Contributing to TaurusTLS](./contributing.md)
