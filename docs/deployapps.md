@@ -97,6 +97,8 @@ Windows 32-bit | libcrypto-3.dll, libssl-3.dll, LICENSE.txt | libcrypto-4.dll, l
 Windows 64-bit | libcrypto-3-x64.dll, libssl-3-x64.dll, LICENSE.txt | libcrypto-4-x64.dll, libssl-4-x64.dll, LICENSE.txt |
 Windows ARM64X | libcrypto-3-arm64.dll, libssl-3-arm64.dll, LICENSE.txt | libcrypto-4-arm64.dll, libssl-4-arm64.dll, LICENSE.txt |
 
+If you are using the NTLM (NT Lan Manager) Protocol or legacy algorithms, you need to deploy the ```providers``` directory.
+
 **Note**: We strongly recommend also redistributing the ```openssl.exe``` included in the package, as users may need it for certificate management tasks like:
 
 - Generate keys
