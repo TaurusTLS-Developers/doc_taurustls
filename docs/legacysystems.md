@@ -1,19 +1,28 @@
 # Interoperating with Legacy Systems
 
-Before going into details, you really need to ask yourself if it really is a good idea to support legacy systems since those systems may not meet most modern standards and institutional requirements.  We urge system administrators to upgrade or replace their legacy systems.
+> **Warning:** Legacy systems typically fail to meet modern security standards and compliance frameworks. We strongly recommend upgrading or replacing legacy endpoints whenever possible.
 
-## SSL Protocol is Dropped
+## Removed SSL Protocols
 
-In OpenSSL 1.1, the SSL 2.0 protocol was removed.  In OpenSSL 4.0, the SSL 3.0 Protocol support was removed.  You may only be able to get versions of TLS from 1.0 to 1.3.
+* **SSL 2.0:** Removed in OpenSSL 1.1.0.
+* **SSL 3.0:** Removed in OpenSSL 4.0.0.
 
-## Legacy Algorithms have been moved to the legacy Provider
+Only TLS 1.0 through TLS 1.3 are supported in current OpenSSL releases.
 
-In OpenSSL 3.0 and later, the [legacy provider](https://docs.openssl.org/3.4/man7/OSSL_PROVIDER-legacy/) was introduced and algorithms were moved there.
+## The OpenSSL Legacy Provider
 
-To use these algorithms, you need to call the [[/taurustls/TaurusTLS/LoadLegacyProvider]] procedure and [deploy](./deployapps.md) the legacy provider with your application.
+OpenSSL 3.0+ relocates obsolete algorithms to a separate [legacy provider](https://docs.openssl.org/3.4/man7/OSSL_PROVIDER-legacy/). 
 
-## Security Levels were introduced
+To re-enable these algorithms in TaurusTLS:
+1. Call the [`LoadLegacyProvider`](/taurustls/TaurusTLS/LoadLegacyProvider) procedure at startup.
+2. Ensure the legacy provider module is included when [deploying your application](./deployapps.md).
 
-In OpenSSL 1.1.0, a new feature, [security levels](https://docs.openssl.org/3.0/man3/SSL_CTX_set_security_level/) was introduced to accept or reject algorithms by strength.   The legacy algorithms will be rejected because they are not strong enough for most security levels.
+## Managing Security Levels
 
-TaurusTLS exposes the API with the [[/taurustls/TaurusTLS/TTaurusTLSContext.SecurityLevel]] property plus the [[/taurustls/TaurusTLS/TTaurusTLSIOHandlerSocket.OnSecurityLevel]]   and [[/taurustls/TaurusTLS/TTaurusTLSIOHandlerSocket.OnSecurityLevel]] events.  For legacy systems, you can set the [[/taurustls/TaurusTLS/TTaurusTLSContext.SecurityLevel]] to 0 to accept anything.  That does mean accepting NUL Cipher Suites that do not provide confidentiality that may be required.
+OpenSSL enforces algorithm strength via [security levels](https://docs.openssl.org/3.0/man3/SSL_CTX_set_security_level/). Weak or legacy algorithms are blocked by default on higher levels.
+
+In TaurusTLS, you can control this via:
+* **Property:** [`TTaurusTLSContext.SecurityLevel`](/taurustls/TaurusTLS/TTaurusTLSContext.SecurityLevel)
+* **Event:** [`TTaurusTLSIOHandlerSocket.OnSecurityLevel`](/taurustls/TaurusTLS/TTaurusTLSIOHandlerSocket.OnSecurityLevel)
+
+Setting `SecurityLevel = 0` accepts all supported algorithms. **Note:** This includes NULL cipher suites, which transmit data in plaintext without confidentiality.
