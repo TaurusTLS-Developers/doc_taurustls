@@ -23,6 +23,6 @@ OpenSSL enforces algorithm strength via [security levels](https://docs.openssl.o
 
 In TaurusTLS, you can control this via:
 * **Property:** [[/taurustls/TaurusTLS/TTaurusTLSContext.SecurityLevel]]
-* **Event:** [[/taurustls/TaurusTLS/TTaurusTLSIOHandlerSocket.OnSecurityLevel]]
+* **Event:** [[/taurustls/TaurusTLS/TTaurusTLSIOHandlerSocket.OnSecurityLevel]] and [[/taurustls/TaurusTLS/TTaurusTLSServerIOHandler.OnSecurityLevel]]
 
 Setting `SecurityLevel = 0` accepts all supported algorithms. **Note:** This includes NULL cipher suites, which transmit data in plaintext without confidentiality.
