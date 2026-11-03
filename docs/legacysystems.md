@@ -14,8 +14,9 @@ Only TLS 1.0 through TLS 1.3 are supported in current OpenSSL releases and you m
 OpenSSL 3.0+ relocates obsolete algorithms to a separate [legacy provider](https://docs.openssl.org/3.4/man7/OSSL_PROVIDER-legacy/). 
 
 To re-enable these algorithms in TaurusTLS:
-1. Add the [[/taurustls/TaurusTLS_ProviderLegacy]] unit to your uses clause
-2. Ensure the legacy provider module is included when [deploying your application](./deployapps.md).
+1. Add the [[/taurustls/TaurusTLS_ProviderLegacy]] unit to your uses clause if using the Static Linking mode (MacOS and Mobile platforms).
+2. For the dynamic linking on the Windows and Linux platforms, set the `opnessl.conf` with configured legacy provider.
+3. Ensure the legacy provider module is included when [deploying your application](./deployapps.md).
 
 ## Managing Security Levels
 
